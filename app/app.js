@@ -19,6 +19,10 @@ app.config(function($routeProvider){
 		templateUrl: 'partials/login.html',
 		controller: 'LoginCtrl'
 	})
+	.when('/home', {
+		templateUrl: 'partials/viewAllPins.html',
+		controller: 'viewAllCtrl'
+	})
 	.otherwise('/');
 });
 
