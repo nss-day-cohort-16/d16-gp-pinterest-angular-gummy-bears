@@ -2,5 +2,6 @@
 
 app.factory('PinsStorage', function(){
 	console.log('PinsStorage');
+	return 1;
 	
 });
