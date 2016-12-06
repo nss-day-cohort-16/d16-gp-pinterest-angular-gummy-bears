@@ -1,23 +1,29 @@
 {
   "name": "lib",
   "version": "1.0.0",
+  "description": "",
   "main": "Gruntfile.js",
-  "dependencies": {},
-  "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-browserify": "^5.0.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-contrib-sass": "^1.0.0",
-    "jshint": "^2.9.4",
-    "matchdep": "^1.0.1",
-    "jshint-stylish": "^2.2.1",
-    "grunt-contrib-jshint": "^1.0.0"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Angular Gummy Bears",
+  "author": "",
   "license": "ISC",
-  "description": ""
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1",
+    "matchdep": "^1.0.1"
+  },
+  "dependencies": {
+    "bower": "^1.8.0",
+    "firebase": "^3.6.1",
+    "materialize": "^1.0.0",
+    "materialize-css": "^0.97.8"
+  }
 }
-
