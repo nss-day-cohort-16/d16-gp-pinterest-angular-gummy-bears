@@ -1,19 +1,52 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="description" content="Angular Gummy Bears">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Angular Gummy Bears</title>
-	<link rel="stylesheet" href="css/styles.css">
-	<link rel="stylesheet" type="text/css" href="lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<head>
+		<title></title>
 
-</head>
-<body>
+		<meta name="description" content="">
+		<meta name="author" content="Ali Kimbrell">
+		<meta charset="utf-8">
+
+		<!-- Bootstrap -->
+		<link rel="stylesheet" type="text/css" href="/dist/css/bootstrap.min.css">			
+
+		<!-- from main.scss	 -->
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body ng-app="PinterestApp">
+		<div class="container-fluid">
+			<h1>Pinterest!</h1>
+			<div ng-include="'partials/nav.html'"></div>
+
+			<div ng-view></div>
+
+		</div> <!-- close container div -->
+		
+		<!-- jQuery -->
+		<script src="dist/jquery.min.js"></script>
+
+		<!-- Boostrap -->
+		<script src="dist/js/bootstrap.min.js"></script>
+		
+		<!-- Angular -->
+		<script src="lib/bower_components/angular/angular.min.js"></script>
+		<script src="lib/bower_components/angular-route/angular-route.min.js"></script>
+
+		<!-- Firebase -->
+	    <script src="lib/bower_components/firebase/firebase.js"></script>
+
+		<script src="app/app.js"></script>
+
+		<script src="app/values/fb-getter.js"></script>
+
+		<!-- providers -->
+		<script src="app/factories/AuthFactory.js"></script>		
+
+		<!-- controllers -->
+	    <script src="app/controllers/navCtrl.js"></script>
+		<script src="app/controllers/LoginCtrl.js"></script>
 
 
-
-	<script src=""></script>
-
-</body>
+	</body>
 </html>
