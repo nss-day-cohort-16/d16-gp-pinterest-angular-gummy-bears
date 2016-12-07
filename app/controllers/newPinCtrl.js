@@ -1,13 +1,15 @@
 'use strict';
 
-app.controller('NewPinCtrl', function($scope, PinsFactory, BoardsFactory, AuthFactory){
+app.controller('NewPinCtrl', function($scope, PinsFactory, BoardsFactory, AuthFactory, $window){
 console.log("newPinCtrlRunning: ");
 
 	let currentUser = AuthFactory.getUser();
+	
 
-	$scope.allBoards = BoardsFactory.getAllBoards()
-	.then(function(allBoardsArr){
-	$scope.userBoards = allBoardsArr;// will use boards factory to get user boards?
+	BoardsFactory.getUserBoards(currentUser)
+	.then(function(allUserBoards){
+		console.log('allUserBoards', allUserBoards);
+		$scope.userBoards = allUserBoards;
 		$scope.$apply();
 	});
 
@@ -21,10 +23,11 @@ console.log("newPinCtrlRunning: ");
 	};
 
 	$scope.addNewPin = function(){
+		console.log('$scope.newUserPin', $scope.newUserPin);
 		PinsFactory.postNewPin($scope.newUserPin)
 		.then((response) => {
 			// console.log("response = ", response);
-			$location.url("/board");
+			$window.location.url = '#/';
 			$scope.$apply();
 		});
 	};

@@ -2,10 +2,10 @@
 
 
 	<input type="text" placeholder="Paste a url">
-	<input type="text" placeholder="Say something about this pin">
+	<input type="text" ng-model="newUserPin.caption" placeholder="Say something about this pin">
 
-	<select ng-model="NewPinCtrl" ng-change="getCurrentBoard" >
-	 <option id="{{userBoard.id}}"ng-repeat="userBoard in userBoards">{{userBoard.title}}</option>
+	<select ng-model="newUserPin.boardid" >
+	 <option value="{{userBoard.id}}" ng-repeat="userBoard in userBoards">{{userBoard.title}}</option>
 	</select>
 
 	<button ng-click="addNewPin()">Create new pin</button>
