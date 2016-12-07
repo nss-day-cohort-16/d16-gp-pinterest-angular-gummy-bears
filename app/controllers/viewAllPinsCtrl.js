@@ -1,8 +1,8 @@
 'use strict';
 
-app.controller('ViewAllCtrl', function($scope, PinsStorage){
+app.controller('ViewAllCtrl', function($scope, PinsFactory){
 
-	PinsStorage.getAllPins()
+	PinsFactory.getAllPins()
 	.then((data) => {
 		$scope.pins = data;
 		$scope.$apply();

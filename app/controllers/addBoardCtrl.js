@@ -15,10 +15,9 @@ app.controller('AddBoardCtrl', function($scope, BoardsFactory, $location, AuthFa
 
 
 	$scope.addNewBoard = function(){
-		let boardsArr = [];
 		BoardsFactory.postNewBoard($scope.newUserBoard)
 		.then((response) => {
-			console.log('response', response);
+			console.log('boardsArr', boardsArr);
 			// view all boards
 			$location.url();
 			$scope.$apply();

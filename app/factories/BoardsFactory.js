@@ -13,7 +13,7 @@ app.factory('BoardsFactory', function($http, FBCreds){
 					boardsArr.push(currentBoard);
 				});
 				console.log('boardsArr', boardsArr);
-				resolve(boardsObj);
+				resolve(boardsArr);
 			});
 		});
 	};
