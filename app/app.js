@@ -32,6 +32,10 @@ app.config(function($routeProvider){
 		templateUrl: 'partials/newPin.html',
 		controller: 'NewPinCtrl'
 	})
+	.when('/myBoards', {
+		templateUrl: 'partials/viewUserBoard.html',
+		controller: 'viewUserBoardCtrl'
+	})
 	.otherwise('/');
 });
 

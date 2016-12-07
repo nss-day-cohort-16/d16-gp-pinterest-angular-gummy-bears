@@ -4,7 +4,7 @@
 	<input type="text" placeholder="Paste a url">
 	<input type="text" placeholder="Say something about this pin">
 
-	<select ng-model="NewPinCtrl" >
+	<select ng-model="NewPinCtrl" ng-change="getCurrentBoard" >
 	 <option id="{{userBoard.id}}"ng-repeat="userBoard in userBoards">{{userBoard.title}}</option>
 	</select>
 

@@ -20,12 +20,12 @@ console.log("newPinCtrlRunning: ");
 		"caption": ""
 	};
 
-	// $scope.addNewPin = function(){
-	// 	PinsFactory.postNewPin($scope.newUserPin)
-	// 	.then((response) => {
-	// 		// console.log("response = ", response);
-	// 		$location.url("");
-	// 		$scope.$apply();
-	// 	});
-	// };
+	$scope.addNewPin = function(){
+		PinsFactory.postNewPin($scope.newUserPin)
+		.then((response) => {
+			// console.log("response = ", response);
+			$location.url("/board");
+			$scope.$apply();
+		});
+	};
 });

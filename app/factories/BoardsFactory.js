@@ -36,6 +36,16 @@ app.factory('BoardsFactory', function($http, FBCreds){
 		});
 	};
 
+	let getUserBoards = (userId) => {
+		return new Promise((resolve, reject)=> {
+			$http.get(`${FBCreds.databaseURL}/boards.json?orderBy="uid"&equalTo="${userId}"`)
+			.success((userBoards) => {
+				console.log("userBoards",userBoards );
+				resolve(userBoards);
+			});
+		});
+	};
+
 	return { getAllBoards, getSingleBoard, postNewBoard };
 
 });
