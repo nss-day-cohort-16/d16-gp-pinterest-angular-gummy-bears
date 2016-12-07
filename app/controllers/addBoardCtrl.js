@@ -2,7 +2,7 @@
 
 // Controls the addBoard.html partial
 app.controller('AddBoardCtrl', function($scope, BoardsFactory, $location, AuthFactory){
-	
+
 	let currentUser = AuthFactory.getUser();
 
 	$scope.newUserBoard = {
@@ -17,9 +17,8 @@ app.controller('AddBoardCtrl', function($scope, BoardsFactory, $location, AuthFa
 	$scope.addNewBoard = function(){
 		BoardsFactory.postNewBoard($scope.newUserBoard)
 		.then((response) => {
-			console.log('boardsArr', boardsArr);
-			// view all boards
-			$location.url();
+			// console.log("response = ", response);
+			$location.url("/home");
 			$scope.$apply();
 		});
 	};

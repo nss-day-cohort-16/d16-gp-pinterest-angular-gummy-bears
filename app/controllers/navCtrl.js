@@ -16,7 +16,7 @@ app.controller('NavCtrl', function($scope){
 		},
 		{
 			name: 'Add pin',
-			url: '#/addpin'
+			url: '#/addPin'
 		}
 	];
 });
