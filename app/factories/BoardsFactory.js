@@ -6,11 +6,13 @@ app.factory('BoardsFactory', function($http, FBCreds){
 		return new Promise((resolve, reject) => {
 			$http.get(`${FBCreds.databaseURL}/boards.json`)
 			.success((boardsObj) => {
+				let boardsArr = [];
 				Object.keys(boardsObj).forEach((key) => {
 					let currentBoard = boardsObj[key];
 					currentBoard.id = key;
+					boardsArr.push(currentBoard);
 				});
-				console.log('boardsObj', boardsObj);
+				console.log('boardsArr', boardsArr);
 				resolve(boardsObj);
 			});
 		});

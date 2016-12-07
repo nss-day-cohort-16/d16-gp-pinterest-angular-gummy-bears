@@ -18,7 +18,8 @@ app.controller('AddBoardCtrl', function($scope, BoardsFactory, $location, AuthFa
 		let boardsArr = [];
 		BoardsFactory.postNewBoard($scope.newUserBoard)
 		.then((response) => {
-			console.log('response after promise', response);
+			console.log('response', response);
+			// view all boards
 			$location.url();
 			$scope.$apply();
 		});

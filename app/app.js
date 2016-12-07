@@ -28,6 +28,10 @@ app.config(function($routeProvider){
 		controller: 'AddBoardCtrl',
 		resolve: {isAuth}
 	})
+	.when('addPin', {
+		templateUrl: 'partials/newPin.html',
+		controller: 'newPinCtrl'
+	})
 	.otherwise('/');
 });
 

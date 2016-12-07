@@ -13,6 +13,10 @@ app.controller('NavCtrl', function($scope){
 		{
 			name: 'Add board',
 			url: '#/addBoard'
+		},
+		{
+			name: 'Add pin',
+			url: '#/addpin'
 		}
 	];
 });

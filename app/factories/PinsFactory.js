@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('PinsStorage', function($http, FBCreds){
+app.factory('PinsFactory', function($http, FBCreds){
 
 	let getAllPins = () => {
 		let pinsArr = [];
