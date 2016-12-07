@@ -9,6 +9,10 @@ app.controller('NavCtrl', function($scope){
 		{
 			name: 'Logout',
 			url: '#/logout'
+		},
+		{
+			name: 'Add board',
+			url: '#/addBoard'
 		}
 	];
 });

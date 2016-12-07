@@ -23,9 +23,10 @@ app.config(function($routeProvider){
 		templateUrl: 'partials/viewAllPins.html',
 		controller: 'ViewAllCtrl'
 	})
-	.when('/add/pin', {
-		templateUrl: 'partials/newPin.html',
-		controller: 'NewPinCtrl'
+	.when('/addBoard', {
+		templateUrl: 'partials/addBoard.html',
+		controller: 'AddBoardCtrl',
+		resolve: {isAuth}
 	})
 	.otherwise('/');
 });
