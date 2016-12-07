@@ -1,6 +1,11 @@
 <h2>Add a new pin!</h2>
-<input type="text" placeholder="Paste a url">
-<input type="text" placeholder="Say something about this pin">
 
-<select ng-options="board for userBoard in userBoards">
-</select>
+
+	<input type="text" placeholder="Paste a url">
+	<input type="text" placeholder="Say something about this pin">
+
+	<select ng-model="NewPinCtrl" >
+	 <option id="{{userBoard.id}}"ng-repeat="userBoard in userBoards">{{userBoard.title}}</option>
+	</select>
+
+	<button ng-click="addNewPin()">Create new pin</button>

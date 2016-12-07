@@ -28,9 +28,9 @@ app.config(function($routeProvider){
 		controller: 'AddBoardCtrl',
 		resolve: {isAuth}
 	})
-	.when('addPin', {
+	.when('/addPin', {
 		templateUrl: 'partials/newPin.html',
-		controller: 'newPinCtrl'
+		controller: 'NewPinCtrl'
 	})
 	.otherwise('/');
 });
