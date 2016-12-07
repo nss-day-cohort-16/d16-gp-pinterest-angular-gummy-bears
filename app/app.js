@@ -21,7 +21,11 @@ app.config(function($routeProvider){
 	})
 	.when('/home', {
 		templateUrl: 'partials/viewAllPins.html',
-		controller: 'viewAllCtrl'
+		controller: 'ViewAllCtrl'
+	})
+	.when('/add/pin', {
+		templateUrl: 'partials/newPin.html',
+		controller: 'NewPinCtrl'
 	})
 	.otherwise('/');
 });
