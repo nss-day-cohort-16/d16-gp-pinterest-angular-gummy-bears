@@ -7,9 +7,7 @@ app.factory('PinsFactory', function($http, FBCreds){
 		return new Promise((resolve, reject) => {
 			$http.get(`${FBCreds.databaseURL}/pins.json`)
 			.success((data) => {
-				console.log('data', data);
 				Object.keys(data).forEach((fbKey) => {
-					console.log('fbKey', fbKey);
 					let pinObj = data[fbKey];
 					pinObj.id = fbKey;
 					pinsArr.push(pinObj);
@@ -24,13 +22,23 @@ app.factory('PinsFactory', function($http, FBCreds){
 		});
 	};
 
-	let addNewPin = (newPin) => {
-		console.log('addNewPin is running');
+	let postNewPin = (newPin) => {
+		return new Promise((resolve, reject) => {
+			$http.post(`${FBCreds.databaseURL}/pins.json`, angular.toJson(newPin))
+			.success((data)=> {
+				console.log("data from postNewPin",data );
+				resolve(data);
+			})
+			.error ((error)=> {
+				reject(error);
+			});
+
+		});
 	};
 	
 	return {
 		getAllPins,
-		addNewPin
+		postNewPin
 	};
 	
 });

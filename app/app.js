@@ -30,7 +30,13 @@ app.config(function($routeProvider){
 	})
 	.when('/addPin', {
 		templateUrl: 'partials/newPin.html',
-		controller: 'NewPinCtrl'
+		controller: 'NewPinCtrl',
+		resolve: {isAuth}
+	})
+	.when('/myBoards', {
+		templateUrl: 'partials/viewUserBoard.html',
+		controller: 'viewUserBoardCtrl',
+		resolve: {isAuth}
 	})
 	.otherwise('/');
 });
