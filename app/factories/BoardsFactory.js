@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('BoardsFactory', function($http, FBCreds){
+app.factory('BoardsFactory', function($http, FBCreds, $scope){
 				let boardsArr = [];
 
 	let getAllBoards = (fbKey) => {
