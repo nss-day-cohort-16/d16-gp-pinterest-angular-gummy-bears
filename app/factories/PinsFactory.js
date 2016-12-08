@@ -26,7 +26,7 @@ app.factory('PinsFactory', function($http, FBCreds){
 		return new Promise((resolve, reject) => {
 			$http.post(`${FBCreds.databaseURL}/pins.json`, angular.toJson(newPin))
 			.success((data)=> {
-				console.log("data from postNewPin",data );
+				// console.log("data from postNewPin",data );
 				resolve(data);
 			})
 			.error ((error)=> {
@@ -35,10 +35,27 @@ app.factory('PinsFactory', function($http, FBCreds){
 
 		});
 	};
-	
+
+	let getAllBoardPins = (boardId) => {
+		let boardPinsArr = [];
+		return new Promise((resolve, reject) => {
+			$http.get(`${FBCreds.databaseURL}/pins.json?orderBy="boardid"&equalTo="${boardId}"`)
+			.success((boardPins) => {
+				Object.keys(boardPins).forEach((fbKey) => {
+					boardPins[fbKey].id = fbKey;
+					// console.log("what is board pins", boardPins);
+					boardPinsArr.push(boardPins[fbKey]);
+				});
+				console.log("board pins in get all board pins", boardPins);
+				resolve(boardPinsArr);
+			});
+		});
+	};
+
 	return {
 		getAllPins,
-		postNewPin
+		postNewPin,
+		getAllBoardPins
 	};
-	
+
 });

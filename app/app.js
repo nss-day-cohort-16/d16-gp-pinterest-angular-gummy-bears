@@ -38,13 +38,13 @@ app.config(function($routeProvider){
 	// 	controller: 'viewUserBoardCtrl',
 	// 	resolve: {isAuth}
 	// })
-	// .when('boards/:boardId', {
-	// 	templateUrl: 'partials/viewSingleBoard.html',
-	// 	controller: 'ViewSingleBoardCtrl',
-	// 	resolve: {isAuth}
-	// })
+	.when('/boards/:boardId', {
+		templateUrl: 'partials/viewSingleBoard.html',
+		controller: 'ViewBoardCtrl',
+		resolve: {isAuth}
+	})
 	// .when('/board',{
-		
+
 	// })
 	.otherwise('/');
 });

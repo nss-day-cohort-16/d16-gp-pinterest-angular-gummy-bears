@@ -1,13 +1,12 @@
 'use strict';
 
-app.controller('NewPinCtrl', function($scope, PinsFactory, BoardsFactory, AuthFactory, FBCreds, $window){
+app.controller('NewPinCtrl', function($scope, PinsFactory, BoardsFactory, AuthFactory, FBCreds, $location){
 
 	let currentUser = AuthFactory.getUser();
-	
+
 
 	BoardsFactory.getUserBoards(currentUser)
 	.then(function(allUserBoards){
-		console.log('allUserBoards', allUserBoards);
 		$scope.userBoards = allUserBoards;
 		$scope.$apply();
 	});
@@ -22,13 +21,14 @@ app.controller('NewPinCtrl', function($scope, PinsFactory, BoardsFactory, AuthFa
 	};
 
 	$scope.addNewPin = function(newUserPin){
-		console.log('$scope.newUserPin', $scope.newUserPin);
 		let userPin = $scope.newUserPin;
-		console.log('userPin', userPin);
 		PinsFactory.postNewPin(userPin)
 		.then((response) => {
-			$window.location.url = ('/');
-			$scope.$apply();
+			PinsFactory.getAllBoardPins(userPin.boardid).then ((response) => {
+				console.log("user pins board id", userPin.boardid);
+				// $scope.$apply();
+			});
+				window.location = (`/#/boards/${userPin.boardid}`);
 		});
 	};
 });
