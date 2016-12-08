@@ -1,7 +1,7 @@
 <h2>Add a new pin!</h2>
 
 
-	<input type="text" placeholder="Paste a url">
+	<input type="text" ng-model="newUserPin.img" placeholder="Paste a url">
 	<input type="text" ng-model="newUserPin.caption" placeholder="Say something about this pin">
 
 	<select ng-model="newUserPin.boardid" >
@@ -9,3 +9,5 @@
 	</select>
 
 	<button ng-click="addNewPin()">Create new pin</button>
+
+<!-- <a ng-href="#/boards/{{userBoard.id}}">Create new pin</a> -->
