@@ -35,7 +35,6 @@ app.factory('BoardsFactory', function($http, FBCreds){
 
 		});
 	};
-
 	let getUserBoards = (userId) => {
 		console.log('userId', userId);
 		let userBoardsArr = [];

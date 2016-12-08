@@ -5,7 +5,6 @@ console.log("newPinCtrlRunning: ");
 
 let currentUser = AuthFactory.getUser();
 
-
 BoardsFactory.getUserBoards(currentUser)
 	.then(function(allUserBoards){
 		console.log('allUserBoards', allUserBoards);
