@@ -17,6 +17,10 @@ app.controller('NavCtrl', function($scope){
 		{
 			name: 'Add pin',
 			url: '#/addPin'
+		},
+		{
+			name: 'View my boards',
+			url: '#/myBoards'
 		}
 	];
 });

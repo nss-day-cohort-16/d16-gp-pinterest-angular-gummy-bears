@@ -1,0 +1,15 @@
+<h1>View all user's boards partial</h1>
+
+<!-- Partial to show all of a user's boards -->
+
+<div ng-repeat="board in boards">
+	<ul class="boards" id="{{board.id}}">
+		<li><a href="#/boards/{{board.id}}">Board: {{board.title}}</a></li>
+
+		<!-- Loop over pins in each board -->
+		
+		
+	</ul>
+</div>
+
+<!-- <a href="{{`/#/boards/${userPin.boardid}`}}"> -->

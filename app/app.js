@@ -33,11 +33,11 @@ app.config(function($routeProvider){
 		controller: 'NewPinCtrl',
 		resolve: {isAuth}
 	})
-	// .when('/myBoards', {
-	// 	templateUrl: 'partials/viewUserBoard.html',
-	// 	controller: 'viewUserBoardCtrl',
-	// 	resolve: {isAuth}
-	// })
+	.when('/myBoards', {
+		templateUrl: 'partials/viewUserBoard.html',
+		controller: 'UserBoardsCtrl',
+		resolve: {isAuth}
+	})
 	.when('/boards/:boardId', {
 		templateUrl: 'partials/viewSingleBoard.html',
 		controller: 'ViewBoardCtrl',

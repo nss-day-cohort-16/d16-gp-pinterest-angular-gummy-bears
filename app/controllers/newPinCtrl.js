@@ -25,7 +25,7 @@ app.controller('NewPinCtrl', function($scope, PinsFactory, BoardsFactory, AuthFa
 		PinsFactory.postNewPin(userPin)
 		.then((response) => {
 			PinsFactory.getAllBoardPins(userPin.boardid).then ((response) => {
-				console.log("user pins board id", userPin.boardid);
+				// console.log("user pins board id", userPin.boardid);
 				// $scope.$apply();
 			});
 				window.location = (`/#/boards/${userPin.boardid}`);

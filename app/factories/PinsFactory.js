@@ -37,16 +37,19 @@ app.factory('PinsFactory', function($http, FBCreds){
 	};
 
 	let getAllBoardPins = (boardId) => {
+		console.log('getAllBoardPins', boardId);
 		let boardPinsArr = [];
 		return new Promise((resolve, reject) => {
-			$http.get(`${FBCreds.databaseURL}/pins.json?orderBy="boardid"&equalTo="${boardId}"`)
+			$http.get(`${FBCreds.databaseURL}/pins.json`)
+				// ?orderBy="boardid"&equalTo="${boardId}"`)
 			.success((boardPins) => {
+				console.log('boardPins', boardPins);
 				Object.keys(boardPins).forEach((fbKey) => {
 					boardPins[fbKey].id = fbKey;
-					// console.log("what is board pins", boardPins);
+				// 	// console.log("what is board pins", boardPins);
 					boardPinsArr.push(boardPins[fbKey]);
 				});
-				console.log("board pins in get all board pins", boardPins);
+				// console.log("board pins in get all board pins", boardPins);
 				resolve(boardPinsArr);
 			});
 		});
