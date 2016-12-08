@@ -27,8 +27,10 @@ console.log("newPinCtrlRunning: ");
 		PinsFactory.postNewPin($scope.newUserPin)
 		.then((response) => {
 			// console.log("response = ", response);
-			$window.location.url = '#/';
+			$window.location.url = '#/single/Board';
 			$scope.$apply();
 		});
 	};
+
+	
 });

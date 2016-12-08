@@ -52,6 +52,21 @@ app.factory('BoardsFactory', function($http, FBCreds){
 		});
 	};
 
-	return { getAllBoards, getSingleBoard, postNewBoard, getUserBoards };
+	let deleteBoards = (boardId) => {
+		console.log("boardId", boardId);
+		return new Promise((resolve, reject) => {
+			$http.delete(`${FBCreds.databaseURL}/boards/${boardId}.json`)
+			.success((obj)=> {
+				resolve(obj);
+				$scope.apply();
+			})
+			.error((error)=> {
+				reject(error);
+			})
+			});
+	};
+	
+
+	return { getAllBoards, getSingleBoard, postNewBoard, getUserBoards, deleteBoards };
 
 });

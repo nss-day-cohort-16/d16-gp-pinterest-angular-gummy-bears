@@ -35,7 +35,7 @@ app.config(function($routeProvider){
 	})
 	.when('/myBoards', {
 		templateUrl: 'partials/viewUserBoard.html',
-		controller: 'viewUserBoardCtrl',
+		controller: "ViewUserBoardsCtrl",
 		resolve: {isAuth}
 	})
 	.otherwise('/');

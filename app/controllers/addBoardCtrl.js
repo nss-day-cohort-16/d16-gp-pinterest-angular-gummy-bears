@@ -18,8 +18,15 @@ app.controller('AddBoardCtrl', function($scope, BoardsFactory, $location, AuthFa
 		BoardsFactory.postNewBoard($scope.newUserBoard)
 		.then((response) => {
 			// console.log("response = ", response);
-			$location.url("/home");
+			$location.url("/myBoards");
 			$scope.$apply();
 		});
 	};
+
+	
 });
+
+
+
+
+

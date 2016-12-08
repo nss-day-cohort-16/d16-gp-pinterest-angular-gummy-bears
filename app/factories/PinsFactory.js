@@ -23,6 +23,7 @@ app.factory('PinsFactory', function($http, FBCreds){
 	};
 
 	let postNewPin = (newPin) => {
+		console.log('addNewPin is running', newPin);
 		return new Promise((resolve, reject) => {
 			$http.post(`${FBCreds.databaseURL}/pins.json`, angular.toJson(newPin))
 			.success((data)=> {
@@ -31,6 +32,7 @@ app.factory('PinsFactory', function($http, FBCreds){
 			})
 			.error ((error)=> {
 				reject(error);
+
 			});
 
 		});
