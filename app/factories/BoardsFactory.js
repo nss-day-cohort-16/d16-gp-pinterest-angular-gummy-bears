@@ -20,6 +20,9 @@ app.factory('BoardsFactory', function($http, FBCreds){
 
 	let getSingleBoard = (boardId) => {
 		console.log('getSingleBoard(boardId)', boardId);
+		// return new Promise((resolve, reject) => {
+		// 	$http.get(`${FBCreds.databaseURL}/boards.json?orderBy`)
+		// })
 	};
 
 	let postNewBoard = (newBoard) => {
@@ -46,7 +49,7 @@ app.factory('BoardsFactory', function($http, FBCreds){
 					userBoards[fbKey].id = fbKey;
 					userBoardsArr.push(userBoards[fbKey]);
 				});
-				// console.log('userBoardsArr', userBoardsArr);
+				console.log('userBoardsArr from getUserBoards', userBoardsArr);
 				resolve(userBoardsArr);
 			});
 		});
